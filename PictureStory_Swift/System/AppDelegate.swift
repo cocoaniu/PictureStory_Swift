@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let albumVC = AlbumViewController()
         let albumNVC = UINavigationController.init(rootViewController: albumVC)
-        albumNVC.title = "图集"
+        albumVC.title = "图集"
         albumNVC.tabBarItem.title = "图集"
         albumNVC.tabBarItem.image = UIImage.init(named: "album")
         

@@ -14,6 +14,8 @@ import pop
 
 class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
+    var isAlbum : Bool = false
+    var albumNum : Int = 1
     var tableView : UITableView?
     var pageNum : Int?
     var page_total : Int?
@@ -25,7 +27,13 @@ class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        self.automaticallyAdjustsScrollViewInsets = false;
+        self.navigationController?.automaticallyAdjustsScrollViewInsets = false;
+        if isAlbum {
+            self.tabBarController?.tabBar.isHidden = true
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+        }
     }
     
     override func viewDidLoad() {
@@ -33,10 +41,12 @@ class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
         //loadData
         pageNum = 1
-        loadData()
         
-        self.title = "美图故事";
-
+        if isAlbum {
+            p_solveData(Page: albumNum)
+        } else {
+            loadData()
+        }
         
         //initUI
         initUI()
@@ -61,8 +71,12 @@ class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSour
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
         tableView?.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
             DispatchQueue.main.async {
-                self?.loadData()
-                self?.tableView?.mj_footer.resetNoMoreData()
+                if !(self?.isAlbum)! {
+                    self?.loadData()
+                    self?.tableView?.mj_footer.resetNoMoreData()
+                } else {
+                    self?.p_solveData(Page: (self?.albumNum)!)
+                }
                 self?.tableView?.dg_stopLoading()
             }
         }, loadingView: loadingView)
@@ -71,10 +85,12 @@ class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSour
         tableView?.dg_setPullToRefreshBackgroundColor((tableView?.backgroundColor!)!)
         
         
-
-        // 上拉刷新
-        footer.setRefreshingTarget(self, refreshingAction:#selector(footerRefresh))
-        self.tableView?.mj_footer = footer
+        if isAlbum {
+        } else {
+            // 上拉刷新
+            footer.setRefreshingTarget(self, refreshingAction:#selector(footerRefresh))
+            self.tableView?.mj_footer = footer
+        }
 
     }
 

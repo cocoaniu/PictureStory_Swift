@@ -15,9 +15,14 @@ class AlbumViewController: BaseViewController,UITableViewDelegate,UITableViewDat
     var tableView : UITableView!
     var page_total : Int = 0
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadUI()
         loadData()
         // Do any additional setup after loading the view.
@@ -85,7 +90,13 @@ class AlbumViewController: BaseViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ViewController(), animated: true)
+        
+        let listVC = ViewController()
+        listVC.title = "- 第\(self.page_total - indexPath.row)期图集 -"
+        listVC.isAlbum = true
+        listVC.albumNum = self.page_total - indexPath.row
+        self.navigationController?.pushViewController(listVC, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

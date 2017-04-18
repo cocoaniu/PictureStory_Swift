@@ -24,6 +24,9 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
+        
+        self.title = "那些故事"
+        
         self.initUI()
         // Do any additional setup after loading the view.
     }
