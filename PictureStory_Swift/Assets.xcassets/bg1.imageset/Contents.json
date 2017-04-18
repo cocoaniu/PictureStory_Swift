@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 19,
+          "height" : 20
+        },
+        "cap-insets" : {
+          "bottom" : 0,
+          "top" : 20,
+          "right" : 0,
+          "left" : 20
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "bg1.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

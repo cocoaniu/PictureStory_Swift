@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="306" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="PictureStory_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="306"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="305"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyp-9D-ryr">
+                        <rect key="frame" x="15" y="276" width="341" height="14.5"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-AD-QzX">
+                        <rect key="frame" x="15" y="15" width="341" height="244"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="7kC-AD-QzX" secondAttribute="height" multiplier="7:5" id="og6-JL-Kgl"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZiG-JI-gWj">
+                        <rect key="frame" x="30" y="194" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="5oW-wb-H0a"/>
+                            <constraint firstAttribute="width" constant="50" id="pFt-7X-gqH"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7kC-AD-QzX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="1yT-SA-W5a"/>
+                    <constraint firstAttribute="trailing" secondItem="7kC-AD-QzX" secondAttribute="trailing" constant="15" id="Uh9-uU-P29"/>
+                    <constraint firstItem="ZiG-JI-gWj" firstAttribute="leading" secondItem="7kC-AD-QzX" secondAttribute="leading" constant="15" id="aH0-2y-gcb"/>
+                    <constraint firstAttribute="bottom" secondItem="Iyp-9D-ryr" secondAttribute="bottom" constant="15" id="aq2-qC-Mdd"/>
+                    <constraint firstItem="Iyp-9D-ryr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7kC-AD-QzX" secondAttribute="bottom" constant="10" id="cL8-9w-L6w"/>
+                    <constraint firstItem="ZiG-JI-gWj" firstAttribute="bottom" secondItem="7kC-AD-QzX" secondAttribute="bottom" constant="-15" id="cf5-nv-Y34"/>
+                    <constraint firstAttribute="trailing" secondItem="Iyp-9D-ryr" secondAttribute="trailing" constant="15" id="fFG-zF-Tga"/>
+                    <constraint firstItem="Iyp-9D-ryr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fn5-RW-Aq6"/>
+                    <constraint firstItem="7kC-AD-QzX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="iEB-LY-FNr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="ZiG-JI-gWj" id="nQY-IF-xAp"/>
+                <outlet property="contentLabel" destination="Iyp-9D-ryr" id="e2X-Kn-T6b"/>
+                <outlet property="picImageView" destination="7kC-AD-QzX" id="mYv-jJ-XRe"/>
+            </connections>
+            <point key="canvasLocation" x="78.5" y="183"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.4.0)
+  - DGElasticPullToRefresh (1.1)
+  - FDFullscreenPopGesture (1.1)
+  - MJRefresh (3.1.12)
+  - pop (1.0.9)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SwiftyJSON (3.1.4)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - DGElasticPullToRefresh
+  - FDFullscreenPopGesture (= 1.1)
+  - MJRefresh
+  - pop (~> 1.0)
+  - SDWebImage (~> 3.8)
+  - SwiftyJSON
+  - YYText
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 0bd3c01d95258d7b0704a53c341b9b27d22b24c0
+
+COCOAPODS: 1.2.0
