@@ -120,6 +120,7 @@ class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSour
         NetworkRequest().getRequest(urlString: "http://www.polaxiong.com/collections/get_entries_by_collection_id/"+String(page), params: [:], success: { (tempDict) in
             print("第一页内容：\(tempDict)")
             
+            //当前为图集列表时，每次请求刷新删除当前数组数据
             if self.isAlbum {
                 self.dataArray.removeAllObjects()
             }
