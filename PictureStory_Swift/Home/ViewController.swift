@@ -120,6 +120,9 @@ class ViewController: BaseViewController,UITableViewDelegate,UITableViewDataSour
         NetworkRequest().getRequest(urlString: "http://www.polaxiong.com/collections/get_entries_by_collection_id/"+String(page), params: [:], success: { (tempDict) in
             print("第一页内容：\(tempDict)")
             
+            if self.isAlbum {
+                self.dataArray.removeAllObjects()
+            }
             
             if self.pageNum == self.page_total {
                 self.dataArray.removeAllObjects()
